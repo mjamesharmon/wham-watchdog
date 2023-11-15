@@ -20,19 +20,18 @@ namespace LastChristmas.Console
 
 
 		public static string Display(this LastChristmasRankingResponse response)
-			=> response.CountriesAtNumberOne().
+		{
+			return response.CountriesAtNumberOne().
 				Count() > 0 ? response.Yes() : NoMessage;
+		}
 
-
-		public static string Yes(
-			this LastChristmasRankingResponse response) =>
-				response.CountriesAtNumberOne().
-			Aggregate(
-					new StringBuilder(YesMessage),
-					(builder, country) => builder.AppendLine(country)).
-			ToString();
-						
-			
+		public static string Yes(this LastChristmasRankingResponse response)
+		{
+			return response.CountriesAtNumberOne().
+				Aggregate(new StringBuilder(YesMessage),
+				(builder, country) => builder.AppendLine(country)).
+				ToString();
+        }	
 	}
 }
 

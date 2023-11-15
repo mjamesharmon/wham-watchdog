@@ -14,10 +14,10 @@ namespace LastChristmas.Core.Extensions
         /// </summary>
         /// <param name="value">The input string to be converted.</param>
         /// <returns>An HTML-formatted string.</returns>
-        public static string AsHtmlString(this string value) =>
-            string.IsNullOrWhiteSpace(value) ?
-            "<html></html>" : value;
-
+        public static string AsHtmlString(this string value) {
+            return string.IsNullOrWhiteSpace(value) ? "<html></html>" : value;
+        }
+         
         /// <summary>
         /// Adds a new Ranking object to the list based on the
         /// provided HTML node and conversion function.

@@ -7,12 +7,10 @@ namespace LastChristmas.Core.Test
 {
 	public class HttpClientExtensionsTests
 	{
-
 		private HttpClient? _http;
 
 		private HttpClient Http => _http ??
 			throw new NullReferenceException();
-
 
 		[Theory]
 		[ClassData(typeof(SimpleTheoryDataSet))]
@@ -25,19 +23,13 @@ namespace LastChristmas.Core.Test
 
 			Assert.NotNull(results);
 			Assert.Equal(expectedRankings, results.Rankings);
-
 		}
-
 
 		private void Arrange(string? expectedPayload = default) {
 
 			_http = new HttpClient(new MockHttpMessageHandler().
-				WithDefaults(expectedPayload));
-
-			
+				WithDefaults(expectedPayload));			
 		}
-
-
 	}
 }
 
