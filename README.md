@@ -1,2 +1,3 @@
 # wham-watchdog
-Code magic to tirelessly track and ensure that 'Last Christmas' by Wham! is claiming its well-deserved top chart spot globally
+![Last Christmas!](assets/img/last_christmas.jpeg)
+At last! Track if last christmas tops the charts!
