@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<ArrayOfRanking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ranking>
+    <Country>Denmark</Country>
+    <Rank>0</Rank>
+  </Ranking>
+  <Ranking>
+    <Country>Sweden</Country>
+    <Rank>59</Rank>
+  </Ranking>
+  <Ranking>
+    <Country>Austria</Country>
+    <Rank>22</Rank>
+  </Ranking>
+  <Ranking>
+    <Country>Germany</Country>
+    <Rank>64</Rank>
+  </Ranking>
+</ArrayOfRanking>
