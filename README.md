@@ -1,3 +1,3 @@
 # wham-watchdog
-![Last Christmas!](assets/img/last_christmas.jpeg)
+![Last Christmas!](www/assets/img/last_christmas.jpeg)
 At last! Track if last christmas tops the charts!
