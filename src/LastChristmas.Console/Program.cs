@@ -10,7 +10,7 @@ await Parser.Default.ParseArguments<CommandLineOptions>(args)
        {
            await http.GetLastChristmasRankingsAsync().
                 ContinueWith(t => t.Result.CountriesAtNumberOne().
-                    Transform(opts.Xslt)).
+                    Transform(File.ReadAllText(opts.Xslt))).
                 ContinueWith(t =>
                     File.WriteAllTextAsync(opts.OutputFile, t.Result));
        },
