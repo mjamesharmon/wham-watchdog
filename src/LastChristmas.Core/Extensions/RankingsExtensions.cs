@@ -23,17 +23,26 @@ namespace LastChristmas.Core.Extensions
 
             var transformer = new XslCompiledTransform();
             transformer.Load(reader);
+
             StringBuilder writer = new StringBuilder();
+
             using (StringReader stringReader = new StringReader(xml))
             using (XmlReader xmlReader = XmlReader.Create(stringReader))
-            using (XmlWriter xmlWriter = XmlWriter.Create(writer,new XmlWriterSettings {
-                 Indent=true, OmitXmlDeclaration=true
-            })) {
+            using (XmlWriter xmlWriter = XmlWriter.
+                Create(writer, WriterSettings))
+            {
                 transformer.Transform(xmlReader, xmlWriter);
             }
-
+          
             return writer.ToString();
         }
+
+        private static XmlWriterSettings WriterSettings =>
+            new XmlWriterSettings
+            {
+                Indent = true,
+                OmitXmlDeclaration = true
+            };
 
         private static string ApplyXslt(string xml, string xslt) {
 
