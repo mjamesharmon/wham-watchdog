@@ -26,7 +26,9 @@ namespace LastChristmas.Core.Extensions
             StringBuilder writer = new StringBuilder();
             using (StringReader stringReader = new StringReader(xml))
             using (XmlReader xmlReader = XmlReader.Create(stringReader))
-            using (XmlWriter xmlWriter = XmlWriter.Create(writer)) {
+            using (XmlWriter xmlWriter = XmlWriter.Create(writer,new XmlWriterSettings {
+                 Indent=true, OmitXmlDeclaration=true
+            })) {
                 transformer.Transform(xmlReader, xmlWriter);
             }
 
@@ -53,9 +55,12 @@ namespace LastChristmas.Core.Extensions
 
         public static IEnumerable<string> CountriesAtNumberOne(
            this LastChristmasRankingResponse response) =>
-           response.Rankings.
-               Where(r => r.Rank == 1).
-               Select(r => r.Country);
+           response.Rankings.CountriesAtNumberOne();
+             
+        public static IEnumerable<string> CountriesAtNumberOne(
+            this IEnumerable<Ranking> rankings) =>
+                rankings.Where(r => r.Rank == 1).
+                Select(r => r.Country);
 
     }
 }
