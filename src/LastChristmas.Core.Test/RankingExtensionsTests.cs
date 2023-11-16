@@ -7,21 +7,15 @@ namespace LastChristmas.Core.Test
 {
 	public class RankingExtensionsTests
 	{
-
-
 		[Theory]
 		[ClassData(typeof(RankingExtensionsCountsData))]
 		public void NumberOneCountries_NormalData_Ok(
 			IEnumerable<Ranking> rankings, int expectedCount) {
-
-
 			var numberOnes = rankings.CountriesAtNumberOne();
 
 			Assert.NotNull(numberOnes);
 			Assert.Equal(expectedCount, numberOnes.Count());
-
 		}
-
 
 		[Theory]
 		[ClassData(typeof(RankingExtensionsXmlData))]
@@ -38,7 +32,6 @@ namespace LastChristmas.Core.Test
         public void Transform_WithXslt_Ok(IEnumerable<Ranking> rankings,
             string xslt, string expectedHtml)
         {
-
             string html = rankings.Transform(xslt);
 
             Assert.Equal(expectedHtml.Replace(" ",""), html.Replace(" ",""));
