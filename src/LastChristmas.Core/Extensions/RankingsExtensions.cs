@@ -9,7 +9,7 @@ namespace LastChristmas.Core.Extensions
 {
 	public static class RankingsExtensions
 	{
-		public static string Transform(this IEnumerable<Ranking> rankings,
+		public static string Transform<T>(this IEnumerable<T> rankings,
             string xslt="") 
 		{
             string xml = rankings.AsXml();
@@ -44,8 +44,8 @@ namespace LastChristmas.Core.Extensions
             }     
         }
 
-        private static string AsXml(this IEnumerable<Ranking> rankings) {
-            XmlSerializer xml = new XmlSerializer(typeof(List<Ranking>));
+        private static string AsXml<T>(this IEnumerable<T> rankings) {
+            XmlSerializer xml = new XmlSerializer(typeof(List<T>));
             using (StringWriter writer = new StringWriter())
             {
                 xml.Serialize(writer, rankings.ToList());
@@ -53,14 +53,13 @@ namespace LastChristmas.Core.Extensions
             }
         }
 
-        public static IEnumerable<string> CountriesAtNumberOne(
+        public static IEnumerable<Ranking> CountriesAtNumberOne(
            this LastChristmasRankingResponse response) =>
            response.Rankings.CountriesAtNumberOne();
-             
-        public static IEnumerable<string> CountriesAtNumberOne(
+
+        public static IEnumerable<Ranking> CountriesAtNumberOne(
             this IEnumerable<Ranking> rankings) =>
-                rankings.Where(r => r.Rank == 1).
-                Select(r => r.Country);
+                rankings.Where(r => r.Rank == 1);
 
     }
 }
