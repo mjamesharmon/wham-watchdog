@@ -41,7 +41,8 @@ namespace LastChristmas.Core.Extensions
             new XmlWriterSettings
             {
                 Indent = true,
-                OmitXmlDeclaration = true
+                OmitXmlDeclaration = true,
+                ConformanceLevel = ConformanceLevel.Auto
             };
 
         private static string ApplyXslt(string xml, string xslt) {
