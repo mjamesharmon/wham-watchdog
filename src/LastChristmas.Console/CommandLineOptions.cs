@@ -1,7 +1,7 @@
 ﻿using System;
 using CommandLine;
 
-namespace LastChristmas.Console
+namespace LastChristmas.Transform
 {
 	public class CommandLineOptions
 	{
@@ -25,9 +25,10 @@ namespace LastChristmas.Console
 			HelpText = "Include html transform")]
 		public bool IncludeHtml { get; set; } = false;
 
-		[Option(longName: "xml", Required = false,
-			HelpText = "include raw xml")]
-		public bool IncludeXml { get; set; } = false;
+		[Option(longName: "noxml", Required = false,
+			HelpText = "supress the xml transform")]
+		public bool ExcludeXml { get; set; } = false;
+
 	}
 }
 
