@@ -45,13 +45,13 @@ namespace LastChristmas.Core.Extensions
                 ConformanceLevel = ConformanceLevel.Auto
             };
 
-        private static string ApplyXslt(string xml, string xslt) {
-
+        private static string ApplyXslt(string xml, string xslt)
+        {
             using (StringReader stringReader = new StringReader(xslt))
             using (XmlReader xsltReader = XmlReader.Create(stringReader))
             {
-              return xsltReader.Transform(xml);
-            }     
+                return xsltReader.Transform(xml);
+            }   
         }
 
         private static string AsXml<T>(this IEnumerable<T> rankings) {

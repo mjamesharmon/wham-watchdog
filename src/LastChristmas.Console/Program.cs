@@ -1,18 +1,8 @@
-﻿using CommandLine;
-using LastChristmas.Console;
-using LastChristmas.Core;
-using LastChristmas.Core.Extensions;
+﻿using LastChristmas.Transform;
 
-HttpClient http = new HttpClient();
+TransformerApplication app = ApplicationBuilder.Configure().
+    WithAllTransforms().
+    Build(args);
 
-await Parser.Default.ParseArguments<CommandLineOptions>(args)
-       .MapResult(async (CommandLineOptions opts) =>
-       {
-           await http.GetLastChristmasRankingsAsync().
-                ContinueWith(t => t.Result.CountriesAtNumberOne().
-                    Transform(File.ReadAllText(opts.Xslt))).
-                ContinueWith(t =>
-                    File.WriteAllTextAsync(opts.OutputFile, t.Result));
-       },
-       errs => Task.FromResult(-1)); // Invalid arguments
+await app.RunAsync();
 
