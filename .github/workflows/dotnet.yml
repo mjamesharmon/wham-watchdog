@@ -31,6 +31,7 @@ jobs:
     - name: Execute
       run:  |
         cd src
+        mkdir $GITHUB_WORKSPACE/publish_pages
         dotnet run -c Release --project LastChristmas.Console $GITHUB_WORKSPACE/publish_pages --md --html
       
     
