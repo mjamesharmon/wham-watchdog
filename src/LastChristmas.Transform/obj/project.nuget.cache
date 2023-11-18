@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VwG+zk+ltLHNTKqeM49zQxJcx32OFyLLUtaWkc7xZ4NoyRWG3AvcnIuESbDx+WLSl/8OBfjOpJyEEo/OM5SMjw==",
+  "success": true,
+  "projectFilePath": "/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Transform/LastChristmas.Transform.csproj",
+  "expectedPackageFiles": [
+    "/Users/mharmon/.nuget/packages/commandlineparser/2.9.1/commandlineparser.2.9.1.nupkg.sha512",
+    "/Users/mharmon/.nuget/packages/htmlagilitypack/1.11.54/htmlagilitypack.1.11.54.nupkg.sha512"
+  ],
+  "logs": []
+}

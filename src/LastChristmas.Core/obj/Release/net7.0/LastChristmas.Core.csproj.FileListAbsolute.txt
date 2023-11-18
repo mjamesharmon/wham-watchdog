@@ -1,0 +1,12 @@
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/bin/Release/net7.0/LastChristmas.Core.deps.json
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/bin/Release/net7.0/LastChristmas.Core.dll
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/bin/Release/net7.0/LastChristmas.Core.pdb
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.csproj.AssemblyReference.cache
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.AssemblyInfoInputs.cache
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.AssemblyInfo.cs
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.csproj.CoreCompileInputs.cache
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.dll
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/refint/LastChristmas.Core.dll
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/LastChristmas.Core.pdb
+/Users/mharmon/Projects/wham-watchdog/src/LastChristmas.Core/obj/Release/net7.0/ref/LastChristmas.Core.dll
