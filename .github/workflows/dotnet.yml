@@ -31,4 +31,11 @@ jobs:
         mkdir $GITHUB_WORKSPACE/publish_pages
         cd LastChristmas.Transform/bin/Release/net7.0
         dotnet LastChristmas.Transform.dll $GITHUB_WORKSPACE/publish_pages --md --html
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: main  # Adjust the branch as needed
+        FOLDER: $GITHUB_WORKSPACE/publish
     
