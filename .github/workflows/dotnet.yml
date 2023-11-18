@@ -23,7 +23,7 @@ jobs:
     - name: fir
       run:  pwd
     - name: Change to src directory
-      run: cd src 
+      run: working-directory: src 
     - name: Restore dependencies
       run: pwd
     - name: Build
