@@ -38,6 +38,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        BRANCH: main  # Adjust the branch as needed
+        BRANCH: pages  # Adjust the branch as needed
         FOLDER: /home/runner/work/wham-watchdog/wham-watchdog/publish_pages
     
