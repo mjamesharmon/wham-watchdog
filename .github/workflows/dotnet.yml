@@ -29,5 +29,5 @@ jobs:
         cd src
         dotnet build -c Release --no-restore
         mkdir $GITHUB_WORKSPACE/publish_pages
-        dotnet run -c Release -- project LastChristmas.Transform $GITHUB_WORKSPACE/publish_pages --md --html
+        dotnet run -c Release --project LastChristmas.Transform $GITHUB_WORKSPACE/publish_pages --md --html
     
