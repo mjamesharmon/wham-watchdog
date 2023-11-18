@@ -24,10 +24,10 @@ jobs:
       run: |
         cd src
         dotnet restore
-    - name: Build and Execite
+    - name: Build and Execute
       run:  |
         cd src
         dotnet build -c Release --no-restore
         mkdir $GITHUB_WORKSPACE/publish_pages
-        dotnet run -c Release -- project LastChristmas.Console $GITHUB_WORKSPACE/publish_pages --md --html
+        dotnet run -c Release -- project LastChristmas.Transform $GITHUB_WORKSPACE/publish_pages --md --html
     
