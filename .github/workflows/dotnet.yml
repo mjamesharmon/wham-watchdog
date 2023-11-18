@@ -1,0 +1,43 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '0 0 * * *'  # Run every day at midnight UTC
+permissions:
+    contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: |
+        cd src
+        dotnet restore
+    - name: Build and Execute
+      run:  |
+        cd src
+        dotnet build -c Release --no-restore
+        mkdir $GITHUB_WORKSPACE/publish_pages
+        cd LastChristmas.Transform/bin/Release/net7.0
+        dotnet LastChristmas.Transform.dll $GITHUB_WORKSPACE/publish_pages --md --html
+        ls $t
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        BRANCH: pages  # Adjust the branch as needed
+        FOLDER: /home/runner/work/wham-watchdog/wham-watchdog/publish_pages
+    
