@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run:  |
         cd src
-        dotnet build --no-restore
+        dotnet build -c Release --no-restore
     - name: Execute
       run:  |
         cd src
