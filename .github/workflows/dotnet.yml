@@ -27,6 +27,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Execute
-       dotnet run -c Release --project LastChristmas.Console $GITHUB_WORKSPACE/publish_pages --md --html
-       
+      run:  dotnet run -c Release --project LastChristmas.Console $GITHUB_WORKSPACE/publish_pages --md --html
+      
     
