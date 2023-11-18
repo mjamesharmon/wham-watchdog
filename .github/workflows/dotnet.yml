@@ -23,7 +23,7 @@ jobs:
     - name: Change to src directory
       run: cd src 
     - name: Restore dependencies
-      run: dotnet restore LastChristmas.sln
+      run: ls
     - name: Build
       run: dotnet build --no-restore
     - name: Execute
