@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastChristmas.Core", "LastC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastChristmas.Core.Test", "LastChristmas.Core.Test\LastChristmas.Core.Test.csproj", "{94F6E33D-7565-4E12-9A2F-F783796632D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastChristmas.Transform", "LastChristmas.Console\LastChristmas.Transform.csproj", "{16978B4A-E74C-4029-A0D4-2E5963DD61B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LastChristmas.Transform", "LastChristmas.Transform\LastChristmas.Transform.csproj", "{16978B4A-E74C-4029-A0D4-2E5963DD61B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
