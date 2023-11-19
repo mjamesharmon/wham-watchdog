@@ -9,7 +9,15 @@ namespace LastChristmas.Core.Extensions
 {
 	public static class RankingsExtensions
 	{
-		public static string Transform<T>(this IEnumerable<T> rankings,
+        private static string LastChristmasName =
+            "Last Christmas (Single Version)";
+        private static string LastChristmasUrl =
+            "https://music.apple.com/us/song/last-christmas-single-" +
+            "version/202117984";
+
+
+
+        public static string Transform<T>(this IEnumerable<T> rankings,
             string xslt="") 
 		{
             string xml = rankings.AsXml();
@@ -62,6 +70,15 @@ namespace LastChristmas.Core.Extensions
                 return writer.ToString();
             }
         }
+
+        public static IEnumerable<Ranking> AsRankings(this Playlist list) =>
+            list.Tracks.
+            Select((track, i) =>
+                new RankedTrack() { Name = track.Name, Rank = i + 1 }).
+            Where(t => t.Name.Equals(LastChristmasName) ||
+                t.Url.Equals(LastChristmasUrl)).
+            Select(t => new Ranking(list.Name, t.Rank));
+                
 
         public static IEnumerable<Ranking> CountriesAtNumberOne(
            this LastChristmasRankingResponse response) =>

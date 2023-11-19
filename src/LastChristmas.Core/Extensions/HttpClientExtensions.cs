@@ -11,7 +11,8 @@ namespace LastChristmas.Core.Extensions
         /// The URL for retrieving Last Christmas statistics.
         /// </summary>
         public const string LastChristmasStatsUrl =
-			"https://acharts.co/song/3018";
+            //"https://acharts.co/song/3018";
+            "https://music.apple.com/us/playlist/top-100-denmark/pl.d08496850bc840a4874e877177a69f9f";
 
         /// <summary>
         /// Asynchronously retrieves Last Christmas rankings using the

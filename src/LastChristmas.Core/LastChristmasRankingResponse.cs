@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using LastChristmas.Core.Extensions;
@@ -10,12 +11,7 @@ namespace LastChristmas.Core
     /// </summary>
     public class LastChristmasRankingResponse 
 	{
-        private const string _chartXpath =
-            "/html/body/div/div/div/main/div[2]/table/tbody/tr";
-
-        private const string _titlePath = "td[2]";
-        private const string _valuePath = "td[7]";
-
+        private const string _listId = "schema:music-playlist";
         private HtmlDocument _document;
 
 		internal LastChristmasRankingResponse(string response) {
@@ -34,29 +30,17 @@ namespace LastChristmas.Core
         /// spontaneous singing and festive dance moves.
         /// </returns>
         public IEnumerable<Ranking> Rankings =>
-            _document.DocumentNode.
-                SelectNodes(_chartXpath).Aggregate(new List<Ranking>(),
-                (rankings, node) => rankings.AddNode(node,
-                    node => GetRankingFor(node)));
+          Playlist.AsRankings();
+            
+
+        private Playlist Playlist =>
+            JsonSerializer.Deserialize<Playlist>(List) ??
+                new Playlist();
 
 
-        private Ranking GetRankingFor(HtmlNode node) =>
-            new Ranking(GetText(node), GetRank(node));
+        private string List =>
+            _document.GetElementbyId(_listId).InnerText;
 
-
-        private string GetText(HtmlNode node)
-        {
-
-            string title = node.SelectText(_titlePath);
-            return title.Replace("Singles Top", "").
-                Trim().
-                Split(" ", StringSplitOptions.RemoveEmptyEntries).
-                FirstOrDefault("Unknown");
-        }
-
-
-        private int GetRank(HtmlNode node) =>
-            node.SelectTextAsInt(_valuePath);
     }
 }
 
