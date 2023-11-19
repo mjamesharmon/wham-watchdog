@@ -23,6 +23,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:param name="description" />
 #### <xsl:value-of select="$announcement"/>
 <xsl:value-of select="$description"/>
-[![Click me](https://github.com/mjamesharmon/wham-watchdog/blob/main/docs/assets/img/last_christmas.jpeg?raw=true "Last Christmas")]("https://youtu.be/E8gmARGvPlI?si=gt_S_mTrTcC_GmCa")
+[![Click me](https://mjamesharmon.github.io/wham-watchdog/web/assets/img/last_christmas.jpeg "Last Christmas")]("https://youtu.be/E8gmARGvPlI?si=gt_S_mTrTcC_GmCa")
 </xsl:template>
 </xsl:stylesheet>

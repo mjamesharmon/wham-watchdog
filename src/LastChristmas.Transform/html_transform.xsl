@@ -30,8 +30,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <meta name="author" content="m. james harmon michael harmon"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
-            <link rel="stylesheet" href="assets/css/normalize.css"/>
-            <link rel="stylesheet" href="assets/css/skeleton.css"/>
+            <link rel="stylesheet" href="https://mjamesharmon.github.io/wham-watchdog/web/assets/css/normalize.css"/>
+            <link rel="stylesheet" href="https://mjamesharmon.github.io/wham-watchdog/web/assets/css/skeleton.css"/>
             <link rel="icon" type="image/png" href="images/favicon.png"/>
         </head>
         <body>
@@ -40,7 +40,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
                     <div class="one-half column" style="margin-top: 25%">
                         <h4><xsl:value-of select="$announcement"/></h4>
                         <p><xsl:value-of select="$description"/></p>
-                        <a href="https://youtu.be/E8gmARGvPlI?si=gt_S_mTrTcC_GmCa"><img src="assets/img/last_christmas.jpeg" width="400" height="400" /></a>
+                        <a href="https://youtu.be/E8gmARGvPlI?si=gt_S_mTrTcC_GmCa"><img src="https://mjamesharmon.github.io/wham-watchdog/web/assets/img/last_christmas.jpeg" width="400" height="400" /></a>
                     </div>
                 </div>
             </div>
