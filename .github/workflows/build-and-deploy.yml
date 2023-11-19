@@ -44,6 +44,7 @@ jobs:
       - name: Build and Run
         run: |
           mkdir publish
+	  cp -R src/web/* publish/
           cd src
           dotnet build -c Release --no-restore
           dotnet run -c Release --project LastChristmas.Transform $GITHUB_WORKSPACE/publish --md --html
