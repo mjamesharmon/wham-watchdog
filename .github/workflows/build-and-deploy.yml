@@ -42,3 +42,10 @@ jobs:
           dotnet build -c Release --no-restore
 
           dotnet run -c Release --project LastChristmas.Transform $GITHUB_WORKSPACE/publish --md --html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'publish'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
