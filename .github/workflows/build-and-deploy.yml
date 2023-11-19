@@ -49,6 +49,6 @@ jobs:
         run: |
          cd src
          dotnet build -c Release --no-restore
-         dotnet run -c Release --project LastChristmas.Transform -- $GITHUB_WORKSPACE/publish --md --html
+         dotnet run -c Release --project LastChristmas.Transform $GITHUB_WORKSPACE/publish --md --html
 
 	
