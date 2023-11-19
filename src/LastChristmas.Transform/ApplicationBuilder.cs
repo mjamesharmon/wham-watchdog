@@ -2,6 +2,7 @@
 using CommandLine;
 using LastChristmas.Core;
 using LastChristmas.Core.Extensions;
+using System.Reflection;
 
 namespace LastChristmas.Transform
 {
@@ -108,12 +109,11 @@ namespace LastChristmas.Transform
                 return;
 
             application.AddAction(async r =>
-            { 
+            {
                 await File.WriteAllTextAsync(
                     OutputFile(options.OutputPath, "index.html"),
                     r.CountriesAtNumberOne().
-                        Transform(await File.ReadAllTextAsync(
-                            "html_transform.xsl")));          
+                        Transform(Context.LoadHtmlTransform()));       
             }); 
         }
 
@@ -129,8 +129,7 @@ namespace LastChristmas.Transform
                 await File.WriteAllTextAsync(
                     OutputFile(options.OutputPath, "rankings.md"),
                     r.CountriesAtNumberOne().
-                        Transform(await File.ReadAllTextAsync(
-                            "md_transform.xsl")));
+                        Transform(Context.LoadMarkdownTransform()));
             });
         }
 
@@ -153,7 +152,9 @@ namespace LastChristmas.Transform
 
         private string CustomOutputFileName(CommandLineOptions options) =>
             string.IsNullOrWhiteSpace(options.OutputFile) ?
-            "rankings.out" : options.OutputFile;     
+            "rankings.out" : options.OutputFile;
+
+        private Assembly Context => Assembly.GetExecutingAssembly();
     }
 }
 

@@ -14,11 +14,15 @@
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="html_transform.xsl">
+    <None Remove="html_transform.xsl" />
+    <None Remove="md_transform.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="html_transform.xsl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="md_transform.xsl">
+    </EmbeddedResource>
+    <EmbeddedResource Include="md_transform.xsl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
