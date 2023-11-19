@@ -30,7 +30,7 @@ jobs:
       - name: Setup Publishing
         run: |
           mkdir publish
-          cp src/web/ publish/
+          cp -R src/web/ publish/
       - name: Restore dependencies
         run: |
           cd src
