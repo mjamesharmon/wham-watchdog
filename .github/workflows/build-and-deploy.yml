@@ -1,5 +1,5 @@
 ---
-name: Deploy static content to Pages
+name: Deployment
 on:
   schedule:
     - cron: '0 0 * * *'
